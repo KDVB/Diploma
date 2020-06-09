@@ -1,0 +1,6 @@
+D:\TK-1\Client\Client\bin\Debug\Client.exe.config
+D:\TK-1\Client\Client\bin\Debug\Client.exe
+D:\TK-1\Client\Client\bin\Debug\Client.pdb
+D:\TK-1\Client\Client\obj\Debug\Client.csprojAssemblyReference.cache
+D:\TK-1\Client\Client\obj\Debug\Client.exe
+D:\TK-1\Client\Client\obj\Debug\Client.pdb

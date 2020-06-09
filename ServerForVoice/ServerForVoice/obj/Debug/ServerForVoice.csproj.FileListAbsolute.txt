@@ -1,0 +1,6 @@
+D:\TK-1\ServerForVoice\ServerForVoice\bin\Debug\ServerForVoice.exe.config
+D:\TK-1\ServerForVoice\ServerForVoice\bin\Debug\ServerForVoice.exe
+D:\TK-1\ServerForVoice\ServerForVoice\bin\Debug\ServerForVoice.pdb
+D:\TK-1\ServerForVoice\ServerForVoice\obj\Debug\ServerForVoice.csprojAssemblyReference.cache
+D:\TK-1\ServerForVoice\ServerForVoice\obj\Debug\ServerForVoice.exe
+D:\TK-1\ServerForVoice\ServerForVoice\obj\Debug\ServerForVoice.pdb
