@@ -18,7 +18,7 @@ public class CallReciever : MonoBehaviour
     public TextMeshProUGUI text;
 
     private int port = 11000; // порт сервера
-    private string address = BrowserLoad.address;
+    private string address;
     Thread listener;
 
     // Start is called before the first frame update
@@ -106,7 +106,7 @@ public class CallReciever : MonoBehaviour
     {
         try
         {
-            IPEndPoint ipPoint = new IPEndPoint(IPAddress.Parse(address), port);
+            IPEndPoint ipPoint = new IPEndPoint(IPAddress.Parse(GameObject.Find("GameManager").GetComponent<GameManagerScript>().address), port);
 
             Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             // подключаемся к удаленному хосту

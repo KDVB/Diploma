@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using UnityEngine;
@@ -8,6 +10,7 @@ using UnityEngine.UI;
 
 public class GameManagerScript : MonoBehaviour
 {
+    public string path = Environment.CurrentDirectory + "\\ipAddress.txt";
     public static int currentPlata = 0;
     public GameObject station;
     public GameObject stationAll;
@@ -88,10 +91,17 @@ public class GameManagerScript : MonoBehaviour
 
     public GameObject hints;
 
+    public string address;
+
     // Start is called before the first frame update
     void Start()
     {
+        if (File.Exists(path))
+        {
+            address = System.IO.File.ReadAllLines(path)[0];
+        }
 
+        Debug.Log(address);
         //station.GetComponent<Animation>().Play("AssemblyStation");
         //fisAssemble = true;
         //loadStation.SetActive(true);

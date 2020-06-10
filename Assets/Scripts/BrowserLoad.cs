@@ -7,12 +7,12 @@ using System.Net.Sockets;
 using System.Text;
 using System;
 using UnityEngine.UI;
+using System.IO;
 
 public class BrowserLoad : MonoBehaviour
 {
     public string path = Environment.CurrentDirectory + "\\ipAddress.txt";
     private int port = 11000; // порт сервера
-    public static string address = "192.168.88.200";
 
     public GameObject mainScreen;
     public GameObject mainMenuScreen;
@@ -56,12 +56,14 @@ public class BrowserLoad : MonoBehaviour
     void Start()
     {
         //address = System.IO.File.ReadAllLines(path)[0];
+
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+        
     }
 
 
@@ -129,7 +131,7 @@ public class BrowserLoad : MonoBehaviour
     {
         try
         {
-            IPEndPoint ipPoint = new IPEndPoint(IPAddress.Parse(address), port);
+            IPEndPoint ipPoint = new IPEndPoint(IPAddress.Parse(GameObject.Find("GameManager").GetComponent<GameManagerScript>().address), port);
 
             Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             // подключаемся к удаленному хосту
@@ -193,7 +195,7 @@ public class BrowserLoad : MonoBehaviour
     {
         try
         {
-            IPEndPoint ipPoint = new IPEndPoint(IPAddress.Parse(address), port);
+            IPEndPoint ipPoint = new IPEndPoint(IPAddress.Parse(GameObject.Find("GameManager").GetComponent<GameManagerScript>().address), port);
 
             Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             // подключаемся к удаленному хосту

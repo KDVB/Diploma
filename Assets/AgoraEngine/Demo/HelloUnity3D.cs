@@ -35,7 +35,7 @@ public class HelloUnity3D : MonoBehaviour
     private IRtcEngine mRtcEngine = null;
     private int port = 11000;
     private int portHost = 12000;
-    private string address = BrowserLoad.address;
+    public string address;
 
     string firstChannel = "firstChanel";
     string secondChannel = "secondChannel";
@@ -54,6 +54,8 @@ public class HelloUnity3D : MonoBehaviour
     public Color32 greenCall = new Color32(25, 125, 42, 255);
     public Color32 redCall = new Color32(186, 27, 0, 255);
 
+    float startTime = 0f;
+
     // PLEASE KEEP THIS App ID IN SAFE PLACE
     // Get your own App ID at https://dashboard.agora.io/
     // After you entered the App ID, remove ## outside of Your App ID
@@ -70,8 +72,10 @@ public class HelloUnity3D : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        startTime = Time.time;
+
 #if (UNITY_2018_3_OR_NEWER)
-			if (Permission.HasUserAuthorizedPermission(Permission.Microphone))
+        if (Permission.HasUserAuthorizedPermission(Permission.Microphone))
 			{
 			
 			} 
@@ -208,7 +212,13 @@ public class HelloUnity3D : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(isCall)
+        if (Time.time - startTime < 1.5f)
+        {
+            address = GameObject.Find("GameManager").GetComponent<GameManagerScript>().address;
+
+            Debug.Log(address);
+        }
+        if (isCall)
         {
             CallMenuEnable();
             isCall = false;
@@ -249,7 +259,7 @@ public class HelloUnity3D : MonoBehaviour
     {
         try
         {
-            IPEndPoint ipPoint = new IPEndPoint(IPAddress.Parse(address), port);
+            IPEndPoint ipPoint = new IPEndPoint(IPAddress.Parse(GameObject.Find("GameManager").GetComponent<GameManagerScript>().address), port);
 
             Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             // подключаемся к удаленному хосту
@@ -294,7 +304,7 @@ public class HelloUnity3D : MonoBehaviour
     {
         try
         {
-            IPEndPoint ipPoint = new IPEndPoint(IPAddress.Parse(address), port);
+            IPEndPoint ipPoint = new IPEndPoint(IPAddress.Parse(GameObject.Find("GameManager").GetComponent<GameManagerScript>().address), port);
 
             Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             // подключаемся к удаленному хосту
@@ -335,7 +345,7 @@ public class HelloUnity3D : MonoBehaviour
     {
         try
         {
-            IPEndPoint ipPoint = new IPEndPoint(IPAddress.Parse(address), port);
+            IPEndPoint ipPoint = new IPEndPoint(IPAddress.Parse(GameObject.Find("GameManager").GetComponent<GameManagerScript>().address), port);
 
             Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             // подключаемся к удаленному хосту
@@ -375,7 +385,7 @@ public class HelloUnity3D : MonoBehaviour
     {
         try
         {
-            IPEndPoint ipPoint = new IPEndPoint(IPAddress.Parse(address), port);
+            IPEndPoint ipPoint = new IPEndPoint(IPAddress.Parse(GameObject.Find("GameManager").GetComponent<GameManagerScript>().address), port);
 
             Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             // подключаемся к удаленному хосту
@@ -517,7 +527,7 @@ public class HelloUnity3D : MonoBehaviour
     {
         try
         {
-            IPEndPoint ipPoint = new IPEndPoint(IPAddress.Parse(address), port);
+            IPEndPoint ipPoint = new IPEndPoint(IPAddress.Parse(GameObject.Find("GameManager").GetComponent<GameManagerScript>().address), port);
 
             Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             // подключаемся к удаленному хосту
@@ -557,7 +567,7 @@ public class HelloUnity3D : MonoBehaviour
     {
         try
         {
-            IPEndPoint ipPoint = new IPEndPoint(IPAddress.Parse(address), port);
+            IPEndPoint ipPoint = new IPEndPoint(IPAddress.Parse(GameObject.Find("GameManager").GetComponent<GameManagerScript>().address), port);
 
             Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             // подключаемся к удаленному хосту
@@ -593,7 +603,7 @@ public class HelloUnity3D : MonoBehaviour
     {
         try
         {
-            IPEndPoint ipPoint = new IPEndPoint(IPAddress.Parse(address), port);
+            IPEndPoint ipPoint = new IPEndPoint(IPAddress.Parse(GameObject.Find("GameManager").GetComponent<GameManagerScript>().address), port);
 
             Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             // подключаемся к удаленному хосту
@@ -629,7 +639,7 @@ public class HelloUnity3D : MonoBehaviour
     {
         try
         {
-            IPEndPoint ipPoint = new IPEndPoint(IPAddress.Parse(address), port);
+            IPEndPoint ipPoint = new IPEndPoint(IPAddress.Parse(GameObject.Find("GameManager").GetComponent<GameManagerScript>().address), port);
 
             Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             // подключаемся к удаленному хосту
@@ -665,7 +675,7 @@ public class HelloUnity3D : MonoBehaviour
     {
         try
         {
-            IPEndPoint ipPoint = new IPEndPoint(IPAddress.Parse(address), port);
+            IPEndPoint ipPoint = new IPEndPoint(IPAddress.Parse(GameObject.Find("GameManager").GetComponent<GameManagerScript>().address), port);
 
             Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             // подключаемся к удаленному хосту
@@ -724,7 +734,7 @@ public class HelloUnity3D : MonoBehaviour
     {
         try
         {
-            IPEndPoint ipPoint = new IPEndPoint(IPAddress.Parse(address), port);
+            IPEndPoint ipPoint = new IPEndPoint(IPAddress.Parse(GameObject.Find("GameManager").GetComponent<GameManagerScript>().address), port);
 
             Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             // подключаемся к удаленному хосту
@@ -771,7 +781,7 @@ public class HelloUnity3D : MonoBehaviour
     {
         try
         {
-            IPEndPoint ipPoint = new IPEndPoint(IPAddress.Parse(address), port);
+            IPEndPoint ipPoint = new IPEndPoint(IPAddress.Parse(GameObject.Find("GameManager").GetComponent<GameManagerScript>().address), port);
 
             Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             // подключаемся к удаленному хосту

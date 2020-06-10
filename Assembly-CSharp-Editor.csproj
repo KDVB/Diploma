@@ -64,11 +64,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\AgoraEngine\Editor\BL_BuildPostProcess.cs" />
-    <Compile Include="Assets\ZFBrowser\Scripts\Editor\BrowserEditor.cs" />
-    <Compile Include="Assets\ZFBrowser\Scripts\Editor\EditorShutdown.cs" />
-    <Compile Include="Assets\ZFBrowser\Scripts\Editor\FlagsEditor.cs" />
-    <Compile Include="Assets\ZFBrowser\Scripts\Editor\IconGenerator.cs" />
-    <Compile Include="Assets\ZFBrowser\Scripts\Editor\PostBuildStandalone.cs" />
     <Reference Include="UnityEditor.TestRunner">
       <HintPath>D:/TK-1/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>

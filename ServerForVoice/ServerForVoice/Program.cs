@@ -15,6 +15,10 @@ namespace ServerForVoice
         static int port = 11000; // порт для приема входящих запросов
         static void Main(string[] args)
         {
+            Console.WriteLine("Введіть адресу");
+
+            string serverip = Console.ReadLine();
+
             List<Station> stations = new List<Station>();
 
             List<Telephone> telephones = new List<Telephone>();
@@ -31,7 +35,9 @@ namespace ServerForVoice
             stations[1].AddTelephone("13");
 
             // получаем адреса для запуска сокета
-            IPEndPoint ipPoint = new IPEndPoint(IPAddress.Parse("192.168.88.200"), port);
+            IPEndPoint ipPoint = new IPEndPoint(IPAddress.Parse(serverip), port);
+
+            Console.WriteLine(ipPoint.Address);
 
             // создаем сокет
             Socket listenSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
